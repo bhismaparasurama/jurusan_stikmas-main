@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jurusan PPLG</title>
+    <link href="./output.css" rel="stylesheet" />
+    <script src="/assets/fontawesome/css/all.min.css"></script>
+    <link rel="shortcut icon" href="/assets/img/" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      * {
+        transition: all 0.2s ease-in-out;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --navy: #003468;
+        --dark-navy: #001f3d;
+        --orange: #dd4f00;
+        --black: #111111;
+        --white: #f2f6ff;
+      }
+
+      .active p {
+        opacity: 1;
+        height: auto;
+        margin-bottom: 1rem;
+      }
+
+      .dropdown {
+        animation: slideRight forwards 0.8s ease-in-out;
+        -webkit-animation: slideRight forwards 0.8s ease-in-out;
+      }
+
+      .dropdown-txt {
+        transition: 0.5s ease-in-out;
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -ms-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+      }
+
+      .dd-arrow {
+        transition: 0.3s ease-in-out;
+      }
+
+      .fasil-card:hover .fasil-detail {
+        bottom: 0;
+        opacity: 1;
+      }
+
+      .prestasi-card::-webkit-scrollbar {
+        height: 8px;
+        background-color: transparent;
+      }
+
+      .prestasi-card::-webkit-scrollbar-thumb {
+        background: var(--orange);
+      }
+
+      .komunitas {
+        writing-mode: vertical-lr;
+      }
+
+      .community {
+        background: linear-gradient(#000000bc, #000000bc),
+        url(/assets/img/communitty.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      .border-rem {
+        border-bottom-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+      }
+
+      #home {
+        background: linear-gradient(
+          150deg,
+          var(--white),
+          var(--white),
+          var(--navy)
+        );
+      }
+
+      .statistik {
+        position: relative;
+        /* background-color: var(--navy); */
+      }
+      .statistik::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.95;
+        z-index: -1;
+        background: url(/assets/img/statistik.jpg);
+        background-position: center;
+      }
+
+      .show-nav {
+        opacity: 1;
+        right: 0;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .swiper-pagination-bullet {
+        background-color: var(--navy);
+      }
+
+      .swiper-button-prev::after,
+      .swiper-button-next::after {
+        content: none !important;
+        display: none !important;
+      }
+
+      .swiper-slide-button {
+        color: var(--orange);
+        margin-top: -40px;
+      }
+
+      @media (max-width: 600px) {
+        .swiper-slide-button {
+          display: none !important;
+        }
+      }
+
+      
+    </style>
+  </head>
+  <body class="bg-[var(--white)] font-sans transition-all">
+    <!-- HEADER SECTION START -->
+    <header
+      class="py-4 px-20 flex justify-between items-center fixed w-full top-0 z-20 max-[1360px]:px-10"
+      id="navbar"
+    >
+      <div>
+        <h1 class="text-5xl font-bold text-[var(--navy)] max-[700px]:text-2xl">Jurusan</h1>
+      </div>
+      <nav
+        class="flex nav-menu gap-80 max-[1333px]:gap-60 max-[1140px]:gap-40 max-[1000px]:gap-18 max-[838px]:fixed max-[838px]:-right-60 max-[838px]:opacity-0 max-[838px]:top-0 max-[838px]:bg-[var(--dark-navy)] max-[838px]:py-4 max-[838px]:px-20 max-[838px]:flex-col max-[838px]:hiden max-[838px]:h-screen max-[838px]:gap-24 max-[838px]:justify-center"
+      >
+
+        <span class="absolute top-4 right-4 hidden max-[838px]:inline-block" id="closeNav">
+          <i class="fa-solid fa-x text-[var(--white)]"></i>
+        </span>
+        <ul
+          class="flex items-center gap-8 max-[838px]:flex max-[838px]:flex-col max-[838px]:gap-16"
+        >
+          <li>
+            <a href="" class="text-1xl max-[838px]:text-[var(--white)]"
+              >Komunitas</a
+            >
+          </li>
+          <li>
+            <a href="" class="text-1xl max-[838px]:text-[var(--white)]"
+              >Prestasi</a
+            >
+          </li>
+          <li>
+            <a href="" class="text-1xl max-[838px]:text-[var(--white)]"
+              >Aktivitas</a
+            >
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-8">
+          <i class="fa-solid fa-moon text-2xl max-[838px]:text-[var(--white)]"></i>
+          <a
+            href=""
+            class="py-2 px-4 bg-[var(--orange)] text-[var(--white)] border-2 border-[var(--orange)] hover:border-[va(--orange)] hover:bg-transparent hover:text-[var(--black)]"
+          >
+            Login
+          </a>
+        </div>
+      </nav>
+      <span class="hidden max-[838px]:inline-block" id="openNav">
+        <i class="fa-solid fa-bars"></i>
+      </span>
+    </header>
+    <!-- HEADER SECTION END -->
+
+    <!-- MAIN CONTAINER START -->
+    <section class="main-container">
+      <!-- HERO SECTION START -->
+      <section class="flex gap-8 justify-between items-center px-30 relative max-[1360px]:px-10 max-[530px]:px-2 max-[1070px]:h-dvh" id="home">
+        <div class="flex flex-col gap-4 w-1/2 pt-10 max-[1070px]:absolute max-[1070px]:bg-[var(--white)] max-[1070px]:bottom-0 max-[1070px]:left-0 max-[1070px]:right-0 max-[1070px]:w-full max-[1070px]:flex max-[1070px]:justify-center max-[1070px]:items-center max-[1070px]:p-4">
+          <h1 class="text-8xl font-bold text-[var(--navy)] max-[1070px]:text-3xl">PPLG</h1>
+          <h3 class="text-2xl max-[500px]:text-center">Pengembangan Perangkat Lunak dan Gim</h3>
+          <p class="max-[1070px]:text-center max-[670px]:hidden">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            recusandae vero natus officia magnam odit dolor pariatur eius nulla
+            adipisci quaerat velit, dicta esse earum culpa ea voluptates
+            distinctio incidunt.
+          </p>
+          <div>
+            <a href="">
+              <button
+                class="py-2 px-4 bg-[var(--orange)] text-[var(--white)] border-2 border-[var(--orange)] hover:bg-transparent hover:text-[var(--orange)]"
+              >
+                Cari Tahu
+              </button>
+            </a>
+          </div>
+          <div class="flex gap-4">
+            <i
+              class="fas fa-globe text-2xl text-[var(--dark-navy)] hover:text-[var(--navy)]"
+            ></i>
+            <i
+              class="fa-brands fa-instagram text-2xl text-[var(--dark-navy)] hover:text-[var(--navy)]"
+            ></i>
+            <i
+              class="fa-brands fa-tiktok text-2xl text-[var(--dark-navy)] hover:text-[var(--navy)]"
+            ></i>
+            <i
+              class="fa-brands fa-linkedin text-2xl text-[var(--dark-navy)] hover:text-[var(--navy)]"
+            ></i>
+          </div>
+        </div>
+        <div class="max-[1070px]:w-full max-[1070px]:flex max-[1070px]:justify-center">
+          <img src="/assets/img/home.png" alt="" class="max-[1070px]:w-[40rem] max-[1070px]:h-dvh max-[600px]:w-full max-[600px]:h-full"/>
+        </div>
+      </section>
+      <!-- HERO SECTION END -->
+
+      <!-- PENJELASAN SECTION START -->
+      <section class="flex flex-col py-20 gap-10 px-30 max-[1360px]:px-10 max-[530px]:px-2">
+        <div>
+          <h1 class="text-7xl text-[var(--dark-navy)] font-bold text-center max-[700px]:text-3xl">
+            Penjelasan
+          </h1>
+        </div>
+        <div class="flex items-center gap-4 max-[700px]:flex-col">
+          <div class="flex flex-col gap-4">
+            <div
+              class="dropdown p-4 cursor-pointer overflow-hidden max-[700px]:border-2 max-[700px]:border-[var(--navy)]"
+              onclick="dropdown(0)"
+            >
+              <div class="dropdown-title flex items-center gap-8 max-[700px]:justify-between">
+                <h2 class="text-2xl text-[var(--orange)] max-[530px]:text-lg">
+                  Definisi Jurusan PPLG
+                </h2>
+                <i
+                  class="fas fa-chevron-right dd-arrow text-[var(--orange)]"
+                ></i>
+              </div>
+              <p class="dropdown-txt opacity-0 h-0 mb-0 text-1xl">
+                PPLG atau Pengembangan Perangkat Lunak dan Gim adalah sebuah
+                jurusan di SMK (Sekolah Menengah Kejuruan). Jurusan ini
+                mempelajari dan mendalami cara-cara mengembangkan perangkat
+                lunak.Mulai dari pembuatan, pemeliharaan, manajemen kualitas,
+                dan manajemen organisasi pengembangan perangkat lunak. <br />
+                <br />
+                Selain itu, jurusan PPLG juga berhubungan dengan software
+                komputer seperti pembuatan aplikasi, website, game dan semua
+                yang berhubungan dengan pemrograman. Singkatnya, jurusan PPLG
+                eratkaitannya dengan coding, desain, dan algoritma.
+              </p>
+            </div>
+            <div
+              class="dropdown p-4 cursor-pointer overflow-hidden max-[700px]:border-2 max-[700px]:border-[var(--navy)]"
+              onclick="dropdown(1)"
+            >
+              <div class="dropdown-title flex items-center gap-8 max-[700px]:justify-between">
+                <h2 class="text-2xl text-[var(--orange)] max-[530px]:text-lg">Visi Jurusan PPLG</h2>
+                <i
+                  class="fas fa-chevron-right dd-arrow text-[var(--orange)]"
+                ></i>
+              </div>
+              <p class="dropdown-txt opacity-0 h-0 mb-0 text-1xl">
+                Menciptakan lulusan berkompeten, kreatif, dan memiliki daya
+                saing global di bidang Pengembangan Perangkat Lunak dan Gim
+              </p>
+            </div>
+            <div
+              class="dropdown p-4 cursor-pointer overflow-hidden max-[700px]:border-2 max-[700px]:border-[var(--navy)]"
+              onclick="dropdown(2)"
+            >
+              <div class="dropdown-title flex items-center gap-8 max-[700px]:justify-between">
+                <h2 class="text-2xl text-[var(--orange)] max-[530px]:text-lg">Misi Jurusan PPLG</h2>
+                <i
+                  class="fas fa-chevron-right dd-arrow text-[var(--orange)]"
+                ></i>
+              </div>
+              <p class="dropdown-txt opacity-0 h-0 mb-0 text-1xl open">
+                1. Melaksanakan proses pembelajaran yang berkesan dan
+                berkualitas serta menemamkan soft-skill untuk peningkatan
+                kopetensipeserta didik <br />
+                <br />
+                2. Menghasilkan lulusan di bidang IT Developer yang memenuhi
+                standar industri <br />
+                <br />
+                3. Menumbuhkan jiwa enterpreneurship bagi peserta didik melalui
+                kegiatan Unit Produksi
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-4 max-[1163px]:flex-col">
+            <div class="flex flex-col gap-4">
+              <img
+                src="/assets/img/penjelasan/1.png"
+                alt=""
+                class="rounded-2xl"
+              />
+              <img
+                src="/assets/img/penjelasan/3.png"
+                alt=""
+                class="rounded-2xl"
+              />
+            </div>
+            <div class="">
+              <img
+                src="/assets/img/penjelasan/2.png"
+                alt=""
+                class="h-full object-cover rounded-2xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- PENJELASAN SECTION END -->
+
+      <!-- BIDANG DAN PROSPEK KERJA START -->
+      <section class="py-20 flex flex-col gap-10 px-30 max-[1360px]:px-10 max-[530px]:px-2">
+        <div>
+          <h1 class="text-7xl text-[var(--dark-navy)] font-bold text-center max-[960px]:text-5xl max-[650px]:text-3xl">
+            Konsentrasi Pembelajaran
+          </h1>
+        </div>
+        <div class="flex justify-center max-[1150px]:flex-wrap max-[375px]:gap-4">
+          <div
+            class="flex flex-col gap-4 items-center p-4 max-[1150px]:w-52 max-[460px]:w-full max-[460px]:flex-row max-[375px]:flex-col max-[375px]:bg-white max-[375px]:shadow-md"
+          >
+            <img
+              src="/assets/img/bidang/1.png"
+              alt=""
+              class="p-4 bg-[var(--navy)] rounded-[50%] w-48 max-[460px]:w-32"
+            />
+            <div class="detail-bidang">
+              <div class="inline-block">
+                <h1
+                  class="text-3xl p-2 rounded-[50%] bg-[var(--dark-navy)] text-[var(--white)] max-[540px]:text-xl"
+                >
+                  01
+                </h1>
+              </div>
+              <h1 class="text-2xl font-bold text-[var(--orange)] max-[540px]:text-xl">
+                Web Development
+              </h1>
+              <p>
+                Front End, Back End & Full Stack Developer, Web Designer, Data
+                Structurer
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-4 items-center p-4 max-[1150px]:w-52 max-[460px]:w-full max-[460px]:flex-row max-[375px]:flex-col-reverse max-[375px]:bg-white max-[375px]:shadow-md"
+          >
+            <div class="detail-bidang">
+              <div class="inline-block">
+                <h1
+                  class="text-3xl p-2 rounded-[50%] bg-[var(--dark-navy)] text-[var(--white)] max-[540px]:text-xl"
+                >
+                  02
+                </h1>
+              </div>
+              <h1 class="text-2xl font-bold text-[var(--orange)] max-[540px]:text-xl">
+                App Development
+              </h1>
+              <p>
+                Front End, Back End & Full Stack Developer, Web Designer, Data
+                Structurer
+              </p>
+            </div>
+            <img
+              src="/assets/img/bidang/2.png"
+              alt=""
+              class="p-4 bg-[var(--navy)] rounded-[50%] w-48 max-[460px]:w-32"
+            />
+          </div>
+          <div
+            class="flex flex-col gap-4 items-center p-4 max-[1150px]:w-52 max-[460px]:w-full max-[460px]:flex-row max-[375px]:flex-col max-[375px]:bg-white max-[375px]:shadow-md"
+          >
+            <img
+              src="/assets/img/bidang/3.png"
+              alt=""
+              class="p-4 bg-[var(--navy)] rounded-[50%] w-48 max-[460px]:w-32"
+            />
+            <div class="detail-bidang">
+              <div class="inline-block">
+                <h1
+                  class="text-3xl p-2 rounded-[50%] bg-[var(--dark-navy)] text-[var(--white)] max-[540px]:text-xl"
+                >
+                  03
+                </h1>
+              </div>
+              <h1 class="text-2xl font-bold text-[var(--orange)] max-[540px]:text-xl">
+                Game Development
+              </h1>
+              <p>
+                Front End, Back End & Full Stack Developer, Web Designer, Data
+                Structurer
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-4 items-center p-4 max-[1150px]:w-52 max-[460px]:w-full max-[460px]:flex-row max-[375px]:flex-col-reverse max-[375px]:bg-white max-[375px]:shadow-md"
+          >
+            <div class="detail-bidang">
+              <div class="inline-block">
+                <h1
+                  class="text-3xl p-2 rounded-[50%] bg-[var(--dark-navy)] text-[var(--white)] max-[540px]:text-xl"
+                >
+                  04
+                </h1>
+              </div>
+              <h1 class="text-2xl font-bold text-[var(--orange)] max-[540px]:text-xl">
+                Internet Of Things
+              </h1>
+              <p>
+                Front End, Back End & Full Stack Developer, Web Designer, Data
+                Structurer
+              </p>
+            </div>
+            <img
+              src="/assets/img/bidang/4.png"
+              alt=""
+              class="p-4 bg-[var(--navy)] rounded-[50%] w-48 max-[460px]:w-32"
+            />
+          </div>
+          <div
+            class="flex flex-col gap-4 items-center p-4 max-[1150px]:w-52 max-[460px]:w-full max-[460px]:flex-row max-[375px]:flex-col max-[375px]:bg-white max-[375px]:shadow-md"
+          >
+            <img
+              src="/assets/img/bidang/5.png"
+              alt=""
+              class="p-4 bg-[var(--navy)] rounded-[50%] w-48 max-[460px]:w-32"
+            />
+            <div class="detail-bidang">
+              <div class="inline-block">
+                <h1
+                  class="text-3xl p-2 rounded-[50%] bg-[var(--dark-navy)] text-[var(--white)] max-[540px]:text-xl"
+                >
+                  05
+                </h1>
+              </div>
+              <h1 class="text-2xl font-bold text-[var(--orange)] max-[540px]:text-xl">
+                Robotic Enginner
+              </h1>
+              <p>
+                Front End, Back End & Full Stack Developer, Web Designer, Data
+                Structurer
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- BIDANG DAN PROSPEK KERJA  END -->
+
+      <!-- STATISTIK SECTION START -->
+      <section class="flex justify-center py-20 px-30 statistik max-[1360px]:px-10 max-[530px]:px-2">
+        <div class="w-[90%] p-4 flex justify-between max-[1030px]:w-full max-[1030px]:p-0">
+          <div class="flex flex-col gap-">
+            <div class="flex items-center gap-2">
+              <i
+                class="fa-solid fa-user text-8xl text-white max-[1030px]:text-5xl max-[520px]:text-3xl"
+              ></i>
+              <h1
+                class="text-8xl font-bold text-[var(--orange)] counter max-[1030px]:text-5xl max-[520px]:text-3xl"
+                data-target="125"
+              >
+                0
+              </h1>
+            </div>
+            <div>
+              <h1 class="text-6xl font-bold text-white max-[1030px]:text-4xl max-[520px]:text-2xl">
+                Siswa
+              </h1>
+            </div>
+          </div>
+          <div class="flex flex-col gap-">
+            <div class="flex items-center gap-2">
+              <i
+                class="fa-solid fa-user-graduate text-8xl text-white max-[1030px]:text-5xl max-[520px]:text-3xl"
+              ></i>
+              <h1
+                class="text-8xl font-bold text-[var(--orange)] counter max-[1030px]:text-5xl max-[520px]:text-3xl"
+                data-target="10"
+              >
+                0
+              </h1>
+            </div>
+            <div>
+              <h1 class="text-6xl font-bold text-white max-[1030px]:text-4xl max-[520px]:text-2xl">
+                Guru
+              </h1>
+            </div>
+          </div>
+          <div class="flex flex-col gap-">
+            <div class="flex items-center gap-2">
+              <i
+                class="fa-solid fa-handshake text-8xl text-white max-[1030px]:text-5xl max-[520px]:text-3xl"
+              ></i>
+              <h1
+                class="text-8xl font-bold text-[var(--orange)] counter max-[1030px]:text-5xl max-[520px]:text-3xl"
+                data-target="50"
+              >
+                0
+              </h1>
+            </div>
+            <div>
+              <h1 class="text-6xl font-bold text-white max-[1030px]:text-4xl max-[520px]:text-2xl">
+                Partner
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- STATISTIK SECTION END -->
+
+      <!-- GURU START -->
+      <section class="flex py-20 flex-col gap-10 px-30 max-[1360px]:px-10 max-[530px]:px-2">
+        <div>
+          <h1 class="text-7xl text-[var(--dark-navy)] font-bold text-center max-[960px]:text-5xl max-[650px]:text-3xl">
+            Tenaga Pengajar
+          </h1>
+        </div>
+        <div class="flex justify-center gap-10 flex-wrap">
+          <div class="w-64 aspect-[4/5] relative max-lg:scale-100 guru-cart">
+            <img
+              src="/assets/img/guru/juliani.png"
+              alt=""
+              class="rounded-2xl w-full h-full object-cover brightness-75"
+            />
+            <div
+              class="bg-[var(--navy)] absolute bottom-0 py-2 px-4 flex w-full justify-between items-center border-rem"
+            >
+              <div>
+                <h1 class="text-2xl font-bold text-[var(--white)]">Juliani</h1>
+                <h3 class="text-[var(--white)]">Kepala Program</h3>
+              </div>
+              <div>
+                <i
+                  class="fa-solid fa-arrow-up py-2 px-3 text-xl rounded-[50%] bg-[var(--orange)] text-[var(--white)] rotate-45"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="w-64 aspect-[4/5] relative guru-cart">
+            <img
+              src="/assets/img/guru/nopa.jpeg"
+              alt=""
+              class="rounded-2xl w-full h-full object-cover brightness-75"
+            />
+            <div
+              class="bg-[var(--navy)] absolute bottom-0 py-2 px-4 flex w-full justify-between items-center border-rem"
+            >
+              <div>
+                <h1 class="text-2xl font-bold text-[var(--white)]">Nopa</h1>
+                <h3 class="text-[var(--white)]">Kepala Bengkel</h3>
+              </div>
+              <div>
+                <i
+                  class="fa-solid fa-arrow-up py-2 px-3 text-xl rounded-[50%] bg-[var(--orange)] text-[var(--white)] rotate-45"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="w-64 aspect-[4/5] relative guru-cart">
+            <img
+              src="/assets/img/guru/willy.jpeg"
+              alt=""
+              class="rounded-2xl w-full h-full object-cover brightness-75"
+            />
+            <div
+              class="bg-[var(--navy)] absolute bottom-0 py-2 px-4 flex w-full justify-between items-center border-rem"
+            >
+              <div>
+                <h1 class="text-2xl font-bold text-[var(--white)]">Willy</h1>
+                <h3 class="text-[var(--white)]">Guru</h3>
+              </div>
+              <div>
+                <i
+                  class="fa-solid fa-arrow-up py-2 px-3 text-xl rounded-[50%] bg-[var(--orange)] text-[var(--white)] rotate-45"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="w-64 aspect-[4/5] relative guru-cart">
+            <img
+              src="/assets/img/guru/willy.jpeg"
+              alt=""
+              class="rounded-2xl w-full h-full object-cover brightness-75"
+            />
+            <div
+              class="bg-[var(--navy)] absolute bottom-0 py-2 px-4 flex w-full justify-between items-center border-rem"
+            >
+              <div>
+                <h1 class="text-2xl font-bold text-[var(--white)]">Willy</h1>
+                <h3 class="text-[var(--white)]">Guru</h3>
+              </div>
+              <div>
+                <i
+                  class="fa-solid fa-arrow-up py-2 px-3 text-xl rounded-[50%] bg-[var(--orange)] text-[var(--white)] rotate-45"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="w-64 aspect-[4/5] relative guru-cart">
+            <img
+              src="/assets/img/guru/willy.jpeg"
+              alt=""
+              class="rounded-2xl w-full h-full object-cover brightness-75"
+            />
+            <div
+              class="bg-[var(--navy)] absolute bottom-0 py-2 px-4 flex w-full justify-between items-center border-rem"
+            >
+              <div>
+                <h1 class="text-2xl font-bold text-[var(--white)]">Willy</h1>
+                <h3 class="text-[var(--white)]">Guru</h3>
+              </div>
+              <div>
+                <i
+                  class="fa-solid fa-arrow-up py-2 px-3 text-xl rounded-[50%] bg-[var(--orange)] text-[var(--white)] rotate-45"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="w-64 aspect-[4/5] relative max-lg:scale-100 guru-cart">
+            <img
+              src="/assets/img/guru/juliani.png"
+              alt=""
+              class="rounded-2xl w-full h-full object-cover brightness-75"
+            />
+            <div
+              class="bg-[var(--navy)] absolute bottom-0 py-2 px-4 flex w-full justify-between items-center border-rem"
+            >
+              <div>
+                <h1 class="text-2xl font-bold text-[var(--white)]">Juliani</h1>
+                <h3 class="text-[var(--white)]">Kepala Program</h3>
+              </div>
+              <div>
+                <i
+                  class="fa-solid fa-arrow-up py-2 px-3 text-xl rounded-[50%] bg-[var(--orange)] text-[var(--white)] rotate-45"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="w-64 aspect-[4/5] relative guru-cart">
+            <img
+              src="/assets/img/guru/nopa.jpeg"
+              alt=""
+              class="rounded-2xl w-full h-full object-cover brightness-75"
+            />
+            <div
+              class="bg-[var(--navy)] absolute bottom-0 py-2 px-4 flex w-full justify-between items-center border-rem"
+            >
+              <div>
+                <h1 class="text-2xl font-bold text-[var(--white)]">Nopa</h1>
+                <h3 class="text-[var(--white)]">Kepala Bengkel</h3>
+              </div>
+              <div>
+                <i
+                  class="fa-solid fa-arrow-up py-2 px-3 text-xl rounded-[50%] bg-[var(--orange)] text-[var(--white)] rotate-45"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="w-64 aspect-[4/5] relative guru-cart">
+            <img
+              src="/assets/img/guru/willy.jpeg"
+              alt=""
+              class="rounded-2xl w-full h-full object-cover brightness-75"
+            />
+            <div
+              class="bg-[var(--navy)] absolute bottom-0 py-2 px-4 flex w-full justify-between items-center border-rem"
+            >
+              <div>
+                <h1 class="text-2xl font-bold text-[var(--white)]">Willy</h1>
+                <h3 class="text-[var(--white)]">Guru</h3>
+              </div>
+              <div>
+                <i
+                  class="fa-solid fa-arrow-up py-2 px-3 text-xl rounded-[50%] bg-[var(--orange)] text-[var(--white)] rotate-45"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="w-64 aspect-[4/5] relative guru-cart">
+            <img
+              src="/assets/img/guru/willy.jpeg"
+              alt=""
+              class="rounded-2xl w-full h-full object-cover brightness-75"
+            />
+            <div
+              class="bg-[var(--navy)] absolute bottom-0 py-2 px-4 flex w-full justify-between items-center border-rem"
+            >
+              <div>
+                <h1 class="text-2xl font-bold text-[var(--white)]">Willy</h1>
+                <h3 class="text-[var(--white)]">Guru</h3>
+              </div>
+              <div>
+                <i
+                  class="fa-solid fa-arrow-up py-2 px-3 text-xl rounded-[50%] bg-[var(--orange)] text-[var(--white)] rotate-45"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- GURU END -->
+
+      <!-- PRRESTASI START -->
+      <section class="flex py-20 flex-col gap-10 px-30 max-[1360px]:px-10 max-[530px]:px-2">
+        <div>
+          <h1 class="text-8xl text-center text-[var(--dark-navy)] font-bold max-[960px]:text-5xl max-[650px]:text-3xl">Prestasi</h1>
+        </div>
+        <div class="swiper w-full">
+          <div class="slider-wrapper mx-10 overflow-hidden mb-10 max-[1000px]:mx-0">
+            <div class="swiper-wrapper">
+            <div class="relative swiper-slide">
+              <img
+                src="/assets/img/prestasi/web_technologies.jpeg"
+                alt=""
+                class="w-full h-full object-cover rounded-2xl"
+              />
+              <div
+                class="absolute bottom-0 bg-[var(--dark-navy)] w-full flex items-center justify-between gap-1 px-8 py-5   border-rem"
+              >
+                <div>
+                  <h1 class="text-2xl text-[var(--white)] font-bold">Juara 2</h1>
+                  <h3 class="text-[var(--white)]">LKS Web Technologies</h3>
+                </div>
+                <div>
+                  <i
+                    class="fa-solid fa-arrow-up py-2 px-3 text-2xl rounded-[50%] bg-[var(--orange)] text-[var(--white)]   rotate-45"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div class="relative swiper-slide">
+              <img
+                src="/assets/img/prestasi/web_technologies.jpeg"
+                alt=""
+                class="w-full h-full object-cover rounded-2xl"
+              />
+              <div
+                class="absolute bottom-0 bg-[var(--dark-navy)] w-full flex items-center justify-between gap-1 px-8 py-5   border-rem"
+              >
+                <div>
+                  <h1 class="text-2xl text-[var(--white)] font-bold">Juara 2</h1>
+                  <h3 class="text-[var(--white)]">LKS Web Technologies</h3>
+                </div>
+                <div>
+                  <i
+                    class="fa-solid fa-arrow-up py-2 px-3 text-2xl rounded-[50%] bg-[var(--orange)] text-[var(--white)]   rotate-45"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div class="relative swiper-slide">
+              <img
+                src="/assets/img/prestasi/web_technologies.jpeg"
+                alt=""
+                class="w-full h-full object-cover rounded-2xl"
+              />
+              <div
+                class="absolute bottom-0 bg-[var(--dark-navy)] w-full flex items-center justify-between gap-1 px-8 py-5   border-rem"
+              >
+                <div>
+                  <h1 class="text-2xl text-[var(--white)] font-bold">Juara 2</h1>
+                  <h3 class="text-[var(--white)]">LKS Web Technologies</h3>
+                </div>
+                <div>
+                  <i
+                    class="fa-solid fa-arrow-up py-2 px-3 text-2xl rounded-[50%] bg-[var(--orange)] text-[var(--white)]   rotate-45"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div class="relative swiper-slide">
+              <img
+                src="/assets/img/prestasi/web_technologies.jpeg"
+                alt=""
+                class="w-full h-full object-cover rounded-2xl"
+              />
+              <div
+                class="absolute bottom-0 bg-[var(--dark-navy)] w-full flex items-center justify-between gap-1 px-8 py-5   border-rem"
+              >
+                <div>
+                  <h1 class="text-2xl text-[var(--white)] font-bold">Juara 2</h1>
+                  <h3 class="text-[var(--white)]">LKS Web Technologies</h3>
+                </div>
+                <div>
+                  <i
+                    class="fa-solid fa-arrow-up py-2 px-3 text-2xl rounded-[50%] bg-[var(--orange)] text-[var(--white)]   rotate-45"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div class="relative swiper-slide">
+              <img
+                src="/assets/img/prestasi/web_technologies.jpeg"
+                alt=""
+                class="w-full h-full object-cover rounded-2xl"
+              />
+              <div
+                class="absolute bottom-0 bg-[var(--dark-navy)] w-full flex items-center justify-between gap-1 px-8 py-5   border-rem"
+              >
+                <div>
+                  <h1 class="text-2xl text-[var(--white)] font-bold">Juara 2</h1>
+                  <h3 class="text-[var(--white)]">LKS Web Technologies</h3>
+                </div>
+                <div>
+                  <i
+                    class="fa-solid fa-arrow-up py-2 px-3 text-2xl rounded-[50%] bg-[var(--orange)] text-[var(--white)]   rotate-45"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-slide-button swiper-button-prev">
+            <i class="fa-solid fa-chevron-up -rotate-90"></i>
+          </div>
+          <div class="swiper-slide-button swiper-button-next">
+            <i class="fa-solid fa-chevron-up rotate-90"></i>
+          </div>
+          </div>
+        </div>
+        
+      </section>
+      <!-- PRRESTASI END -->
+
+      <!-- ALUMNI START -->
+      <section class="flex py-20 flex-col gap-10 px-30 max-[1360px]:px-10 max-[530px]:px-2">
+        <div>
+          <h1 class="text-8xl text-center text-[var(--dark-navy)] font-bold max-[960px]:text-5xl max-[650px]:text-3xl">Alumni</h1>
+        </div>
+        <div class="swiper w-full">
+          <div class="slider-wrapper mx-10 overflow-hidden mb-10 max-[1000px]:mx-0">
+            <div class="swiper-wrapper">
+            <div class="relative swiper-slide">
+              <img
+                src="/assets/img/prestasi/web_technologies.jpeg"
+                alt=""
+                class="w-full h-full object-cover rounded-2xl"
+              />
+              <div
+                class="absolute bottom-0 bg-[var(--dark-navy)] w-full flex items-center justify-between gap-1 px-8 py-5   border-rem"
+              >
+                <div>
+                  <h1 class="text-2xl text-[var(--white)] font-bold">Juara 2</h1>
+                  <h3 class="text-[var(--white)]">LKS Web Technologies</h3>
+                </div>
+                <div>
+                  <i
+                    class="fa-solid fa-arrow-up py-2 px-3 text-2xl rounded-[50%] bg-[var(--orange)] text-[var(--white)]   rotate-45"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div class="relative swiper-slide">
+              <img
+                src="/assets/img/prestasi/web_technologies.jpeg"
+                alt=""
+                class="w-full h-full object-cover rounded-2xl"
+              />
+              <div
+                class="absolute bottom-0 bg-[var(--dark-navy)] w-full flex items-center justify-between gap-1 px-8 py-5   border-rem"
+              >
+                <div>
+                  <h1 class="text-2xl text-[var(--white)] font-bold">Juara 2</h1>
+                  <h3 class="text-[var(--white)]">LKS Web Technologies</h3>
+                </div>
+                <div>
+                  <i
+                    class="fa-solid fa-arrow-up py-2 px-3 text-2xl rounded-[50%] bg-[var(--orange)] text-[var(--white)]   rotate-45"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div class="relative swiper-slide">
+              <img
+                src="/assets/img/prestasi/web_technologies.jpeg"
+                alt=""
+                class="w-full h-full object-cover rounded-2xl"
+              />
+              <div
+                class="absolute bottom-0 bg-[var(--dark-navy)] w-full flex items-center justify-between gap-1 px-8 py-5   border-rem"
+              >
+                <div>
+                  <h1 class="text-2xl text-[var(--white)] font-bold">Juara 2</h1>
+                  <h3 class="text-[var(--white)]">LKS Web Technologies</h3>
+                </div>
+                <div>
+                  <i
+                    class="fa-solid fa-arrow-up py-2 px-3 text-2xl rounded-[50%] bg-[var(--orange)] text-[var(--white)]   rotate-45"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div class="relative swiper-slide">
+              <img
+                src="/assets/img/prestasi/web_technologies.jpeg"
+                alt=""
+                class="w-full h-full object-cover rounded-2xl"
+              />
+              <div
+                class="absolute bottom-0 bg-[var(--dark-navy)] w-full flex items-center justify-between gap-1 px-8 py-5   border-rem"
+              >
+                <div>
+                  <h1 class="text-2xl text-[var(--white)] font-bold">Juara 2</h1>
+                  <h3 class="text-[var(--white)]">LKS Web Technologies</h3>
+                </div>
+                <div>
+                  <i
+                    class="fa-solid fa-arrow-up py-2 px-3 text-2xl rounded-[50%] bg-[var(--orange)] text-[var(--white)]   rotate-45"
+                  ></i>
+                </div>
+              </div>
+            </div>
+            <div class="relative swiper-slide">
+              <img
+                src="/assets/img/prestasi/web_technologies.jpeg"
+                alt=""
+                class="w-full h-full object-cover rounded-2xl"
+              />
+              <div
+                class="absolute bottom-0 bg-[var(--dark-navy)] w-full flex items-center justify-between gap-1 px-8 py-5   border-rem"
+              >
+                <div>
+                  <h1 class="text-2xl text-[var(--white)] font-bold">Juara 2</h1>
+                  <h3 class="text-[var(--white)]">LKS Web Technologies</h3>
+                </div>
+                <div>
+                  <i
+                    class="fa-solid fa-arrow-up py-2 px-3 text-2xl rounded-[50%] bg-[var(--orange)] text-[var(--white)]   rotate-45"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-slide-button swiper-button-prev">
+            <i class="fa-solid fa-chevron-up -rotate-90"></i>
+          </div>
+          <div class="swiper-slide-button swiper-button-next">
+            <i class="fa-solid fa-chevron-up rotate-90"></i>
+          </div>
+          </div>
+        </div>
+        
+      </section>
+      <!-- ALUMNI END -->
+
+      <!-- KOMUNITAS START -->
+      <section class="flex bg-[var(--black)] relative items-center h-[90dvh] my-20">
+        <div
+          class="text-8xl text-[var(--white)] font-bold komunitas bg-[var(--navy)] h-full text-center py-20 max-[1060px]:hidden"
+        >
+          Komunitas
+        </div>
+        <div
+          class="flex flex-col items-center gap-4 community h-full justify-center max-[840px]:gap-2 max-[550px]:w-full"
+        >
+          <div>
+            <img src="/assets/img/desc_clipped.png" alt="" class="w-30 max-[840px]:w-28"/>
+          </div>
+          <div class="flex flex-col items-center gap-4">
+            <h1 class="text-8xl font-bold text-[var(--white)] max-[840px]:text-4xl">DESC</h1>
+            <h3 class="text-4xl text-[var(--white)] font-bold max-[840px]:text-2xl max-[550px]:text-center">
+              Developer Stikmas Community
+            </h3>
+            <p class="text-[var(--white)] text-center max-w-[70%] max-[550px]:hidden">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
+              labore repellendus amet sequi voluptatum quisquam necessitatibus
+              culpa facilis fugit placeat!. Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Aut vitae, omnis nisi ad quod cum
+              nihil harum id et ullam eum inventore enim iure reprehenderit nam
+              aspernatur excepturi autem consequatur.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- KOMUNITAS END -->
+
+      <!-- KEGIATAN START -->
+      <section class="py-20 flex flex-col gap-10 px-30 max-[1360px]:px-10 max-[530px]:px-2">
+        <div>
+          <h1 class="text-8xl text-[var(--dark-navy)] font-bold text-center max-[960px]:text-5xl max-[650px]:text-3xl">
+            Aktivitas
+          </h1>
+        </div>
+        <div class="flex gap-10 max-lg:flex-col">
+          <div class="flex flex-col gap-2 w-[50%] max-lg:w-full">
+            <img src="/assets/img/aktivitas/1.png" alt="" />
+            <div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-calendar text-[var(--orange)]"></i>
+                  <p class="text-[var(--orange)]">27 November 2025</p>
+                </div>
+                <h1 class="text-4xl text-[var(--navy)] max-[850px]:text-2xl">
+                  Kegiatan Belajar Bersama Dalam Mengembangkan Bakat dan Minat
+                  di Bidang Teknologi
+                </h1>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Magni perferendis a recusandae rem optio ipsam impedit
+                  quisquam suscipit quae quidem magnam fuga velit labore
+                  molestias quis officia, enim minus porro?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col w-[calc(50%-2.5rem)] gap-8 max-lg:w-full">
+            <div class="flex gap-2 items-center max-[450px]:flex-col max-[450px]:bg-white max-[450px]:shadow-md max-[450px]:p-4">
+              <img
+                src="/assets/img/aktivitas/2.png"
+                alt=""
+                class="w-60 h-30 object-cover max-[450px]:w-full max-[450px]:h-full"
+              />
+              <div class="flex flex-col">
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-calendar text-[var(--orange)]"></i>
+                  <p class="text-[var(--orange)]">27 November 2025</p>
+                </div>
+                <h1 class="text-xl text-[var(--navy)] max-[850px]:text-lg">
+                  Olahraga Bersama Untuk Mningkatkan Daya Tahan Tubuh dan
+                  Melatih Fisik
+                </h1>
+              </div>
+            </div>
+            <div class="flex gap-2 items-center max-[450px]:flex-col max-[450px]:bg-white max-[450px]:shadow-md max-[450px]:p-4">
+              <img
+                src="/assets/img/aktivitas/3.png"
+                alt=""
+                class="w-60 h-30 object-cover max-[450px]:w-full max-[450px]:h-full"
+              />
+              <div class="flex flex-col">
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-calendar text-[var(--orange)]"></i>
+                  <p class="text-[var(--orange)]">27 November 2025</p>
+                </div>
+                <h1 class="text-xl text-[var(--navy)] max-[850px]:text-lg">
+                  Olahraga Bersama Untuk Mningkatkan Daya Tahan Tubuh dan
+                  Melatih Fisik
+                </h1>
+              </div>
+            </div>
+            <div class="flex gap-2 items-center max-[450px]:flex-col max-[450px]:bg-white max-[450px]:shadow-md max-[450px]:p-4">
+              <img
+                src="/assets/img/aktivitas/4.png"
+                alt=""
+                class="w-60 h-30 object-cover max-[450px]:w-full max-[450px]:h-full"
+              />
+              <div class="flex flex-col">
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-calendar text-[var(--orange)]"></i>
+                  <p class="text-[var(--orange)]">27 November 2025</p>
+                </div>
+                <h1 class="text-xl text-[var(--navy)] max-[850px]:text-lg">
+                  Olahraga Bersama Untuk Mningkatkan Daya Tahan Tubuh dan
+                  Melatih Fisik
+                </h1>
+              </div>
+            </div>
+            <div class="flex gap-2 items-center max-[450px]:flex-col max-[450px]:bg-white max-[450px]:shadow-md max-[450px]:p-4">
+              <img
+                src="/assets/img/aktivitas/5.png"
+                alt=""
+                class="w-60 h-30 object-cover max-[450px]:w-full max-[450px]:h-full"
+              />
+              <div class="flex flex-col">
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-calendar text-[var(--orange)]"></i>
+                  <p class="text-[var(--orange)]">27 November 2025</p>
+                </div>
+                <h1 class="text-xl text-[var(--navy)] max-[850px]:text-lg">
+                  Olahraga Bersama Untuk Mningkatkan Daya Tahan Tubuh dan
+                  Melatih Fisik
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- KEGIATAN END -->
+
+      <!-- FASILITAS START -->
+      <section class="flex py-20 flex-col gap-10 px-30 max-[1360px]:px-10 max-[530px]:px-2">
+        <div>
+          <h1 class="text-7xl text-[var(--dark-navy)] font-bold text-center max-[960px]:text-5xl max-[650px]:text-3xl">
+            FASILITAS
+          </h1>
+        </div>
+        <div class="flex gap-4 h-full max-[500px]:flex-col">
+          <div class="flex flex-col gap-4 w-full">
+            <div
+              class="relative overflow-hidden fasil-card cursor-pointer w-full"
+            >
+              <img
+                src="/assets/img/fasilitas/komputer.png"
+                alt=""
+                class="object-cover brightness-90 w-full aspect-[4/3]"
+              />
+              <div
+                class="p-4 absolute -bottom-20 fasil-detail opacity-0 bg-[var(--dark-navy)] w-full"
+              >
+                <h1 class="text-2xl text-[var(--orange)]">Buku</h1>
+                <p class="text-[var(--white)]">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+            <div
+              class="relative overflow-hidden fasil-card cursor-pointer w-full"
+            >
+              <img
+                src="/assets/img/fasilitas/buku.png"
+                alt=""
+                class="object-cover brightness-90 w-full aspect-[3/4]"
+              />
+              <div
+                class="p-4 absolute -bottom-20 fasil-detail opacity-0 bg-[var(--dark-navy)] w-full"
+              >
+                <h1 class="text-2xl text-[var(--orange)]">Buku</h1>
+                <p class="text-[var(--white)]">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4 w-full">
+            <div
+              class="relative overflow-hidden fasil-card cursor-pointer w-full"
+            >
+              <img
+                src="/assets/img/fasilitas/papan.png"
+                alt=""
+                class="object-cover brightness-90 w-full aspect-[3/4]"
+              />
+              <div
+                class="p-4 absolute -bottom-20 fasil-detail opacity-0 bg-[var(--dark-navy)] w-full"
+              >
+                <h1 class="text-2xl text-[var(--orange)]">Buku</h1>
+                <p class="text-[var(--white)]">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+            <div
+              class="relative overflow-hidden fasil-card cursor-pointer w-full"
+            >
+              <img
+                src="/assets/img/fasilitas/wifi.png"
+                alt=""
+                class="object-cover brightness-90 w-full aspect-[4/3]"
+              />
+              <div
+                class="p-4 absolute -bottom-20 fasil-detail opacity-0 bg-[var(--dark-navy)] w-full"
+              >
+                <h1 class="text-2xl text-[var(--orange)]">Buku</h1>
+                <p class="text-[var(--white)]">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-4 w-full">
+            <div
+              class="relative overflow-hidden fasil-card cursor-pointer w-full"
+            >
+              <img
+                src="/assets/img/fasilitas/ac.png"
+                alt=""
+                class="object-cover brightness-90 w-full aspect-[4/3]"
+              />
+              <div
+                class="p-4 absolute -bottom-20 fasil-detail opacity-0 bg-[var(--dark-navy)] w-full"
+              >
+                <h1 class="text-2xl text-[var(--orange)]">Buku</h1>
+                <p class="text-[var(--white)]">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+            <div
+              class="relative overflow-hidden fasil-card cursor-pointer w-full"
+            >
+              <img
+                src="/assets/img/fasilitas/tempat-sampah.png"
+                alt=""
+                class="object-cover brightness-90 w-full aspect-[3/4]"
+              />
+              <div
+                class="p-4 absolute -bottom-20 fasil-detail opacity-0 bg-[var(--dark-navy)] w-full"
+              >
+                <h1 class="text-2xl text-[var(--orange)]">Buku</h1>
+                <p class="text-[var(--white)]">Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FASILITAS END -->
+    </section>
+    <!-- MAIN CONTAINER END -->
+
+    <!-- FOOTER SECTION -->
+    <footer class="flex mt-20 bg-[var(--dark-navy)] px-20 py-20 pb-4 justify-between max-[1360px]:px-10 max-[600px]:flex-wrap max-[530px]:px-2">
+      <div class="flex items-center gap-4 max-[600px]:w-full max-[600px]:mb-10 max-[600px]:justify-center">
+        <div>
+          <img src="/assets/img/desc_clipped.png" alt="" class="w-24 max-[900px]:w-14">
+        </div>
+        <div>
+          <h1 class="text-7xl font-bold text-[var(--white)] max-[900px]:text-4xl">PPLG</h1>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 max-[375px]:w-1/2 max-[375px]:items-center">
+        <div>
+          <h1 class="text-4xl font-bold text-[var(--white)] max-[900px]:text-2xl">Jurusan</h1>
+        </div>
+        <div class="flex flex-col">
+          <a href="" class="text-lg text-[var(--white)]">PPLG</a>
+          <a href="" class="text-lg text-[var(--white)]">AKL</a>
+          <a href="" class="text-lg text-[var(--white)]">TJKT</a>
+          <a href="" class="text-lg text-[var(--white)]">DKV</a>
+          <a href="" class="text-lg text-[var(--white)]">KS</a>
+          <a href="" class="text-lg text-[var(--white)]">PH</a>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 max-[375px]:w-1/2 max-[375px]:items-center">
+        <div class="text-4xl font-bold text-[var(--white)] max-[900px]:text-2xl">
+          <h1>Navigation</h1>
+        </div>
+        <div class="flex flex-col">
+          <a href="" class="text-lg text-[var(--white)]">Komunitas</a>
+          <a href="" class="text-lg text-[var(--white)]">Prestasi</a>
+          <a href="" class="text-lg text-[var(--white)]">Aktivitas</a>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4 max-[375px]:w-full max-[375px]:items-center">
+        <div>
+          <h1 class="text-4xl font-bold text-[var(--white)] max-[900px]:text-2xl">Socials</h1>
+        </div>
+        <div class="flex gap-4">
+          <a href="" class="text-3xl text-[var(--white)]"><i class="fa-brands fa-instagram"></i></a>
+          <a href="" class="text-3xl text-[var(--white)]"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="" class="text-3xl text-[var(--white)]"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER SECTION END -->
+     
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/assets/jQuery v3.7.1/jQuery 3.7.1.min.js"></script>
+    <script src="script.js"></script>
+    <script src="/assets/fontawesome/js/all.min.js"></script>
+  </body>
+</html>
